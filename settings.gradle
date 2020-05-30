@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Chandigarh The City Beautiful"
