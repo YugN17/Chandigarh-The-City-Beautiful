@@ -33,7 +33,6 @@ class PlaceDetails : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.place.observe(viewLifecycleOwner, Observer {
             placeDetailsBinding.place = it
-            requireActivity().actionBar!!.title = it.name
         })
         arguments?.let{
             val safeArgs =  PlaceDetailsArgs.fromBundle(it)
