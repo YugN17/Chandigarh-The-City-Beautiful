@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Chandigarh The City Beautiful</string>
+    <string name="chandigarh_description">Chandigarh, The capital of PUNJAB and HARYANA and also
+        known as the \"THE CITY BEAUTIFUL\" and entirely designed by French architect
+        \"Le Corbusier\".
+        \n\nIt\'s one of the greenest cities in India with some parks, open spaces,
+        perfect design, clean surroundings, gardens, and lakes, etc. that make it an ideal place to
+        dwell and travel. Everything is so well managed here from A to Z that makes this city the
+        first choice for foreigners and locals.
+        \n\nMoreover, the four primary functions of the city
+        are to promote healthy clean living, good working conditions, care of body and soul and
+        proper circulation of traffic in a disciplined way.</string>
+    <string name="repository">repository</string>
+    <string name="title_places_to_visit">Places to Visit</string>
 </resources>
