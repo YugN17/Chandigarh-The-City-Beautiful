@@ -1,6 +1,5 @@
 package com.chandigarhthecitybeautiful.source
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.chandigarhthecitybeautiful.model.Place
@@ -15,16 +14,18 @@ class PlacesDataRepository(private val localDataSource: ILocalDataSource,
                            private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO ) :
     IPlacesDataRepository {
 
-    override val allPlaces : LiveData<List<Place>> = localDataSource.allFacts
-
+    override val allPlaces: LiveData<List<Place>> = localDataSource.allFacts
+    override val message: MutableLiveData<String> = MutableLiveData("")
 
     @ExperimentalStdlibApi
     override suspend fun updateDB() {
         withContext(ioDispatcher) {
-            val result = remoteDataSource.getPlacesFromServer()
-            Log.d("tag",result.toString())
-            if (result is Result.Success)
-                localDataSource.syncDB(result.data)
+            when (val result = remoteDataSource.getPlacesFromServer()) {
+                is Result.Success -> localDataSource.syncDB(result.data)
+                is Result.Error -> message.postValue(result.exception.message)
+                else -> message.postValue("")
+            }
+
         }
     }
 
