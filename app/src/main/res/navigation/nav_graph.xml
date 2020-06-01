@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.chandigarhthecitybeautiful.ui.main.MainFragment"
+        android:name="com.chandigarhthecitybeautiful.ui.fragments.MainFragment"
         android:label="Chandigarh The City Beautiful"
         tools:layout="@layout/main_fragment">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/placeDetails"
-        android:name="com.chandigarhthecitybeautiful.PlaceDetails"
+        android:name="com.chandigarhthecitybeautiful.ui.fragments.PlaceDetails"
         tools:layout="@layout/place_details_fragment"
         android:label="{placeLabel}">
         <argument

@@ -14,10 +14,9 @@ class PlacesDataRepository(private val localDataSource: ILocalDataSource,
                            private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO ) :
     IPlacesDataRepository {
 
-    override val allPlaces: LiveData<List<Place>> = localDataSource.allFacts
+    override val allPlaces: LiveData<List<Place>> = localDataSource.getPlaces()
     override val message: MutableLiveData<String> = MutableLiveData("")
 
-    @ExperimentalStdlibApi
     override suspend fun updateDB() {
         withContext(ioDispatcher) {
             when (val result = remoteDataSource.getPlacesFromServer()) {

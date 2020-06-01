@@ -1,4 +1,4 @@
-package com.chandigarhthecitybeautiful.ui.main
+package com.chandigarhthecitybeautiful.ui.fragments
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -19,6 +19,7 @@ import com.chandigarhthecitybeautiful.R
 import com.chandigarhthecitybeautiful.adpaters.PlaceGridAdapter
 import com.chandigarhthecitybeautiful.databinding.MainFragmentBinding
 import com.chandigarhthecitybeautiful.model.Place
+import com.chandigarhthecitybeautiful.viewmodels.MainViewModel
 
 class MainFragment : Fragment(), PlaceGridAdapter.onClickListener {
 

@@ -12,7 +12,7 @@ interface PlaceDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertPlace(place: Place)
 
-    @Query("select * from places ")
+    @Query("select * from places ORDER BY id ")
     fun allPlaces(): LiveData<List<Place>>
 
     @Query("select * from places where id=:id ")

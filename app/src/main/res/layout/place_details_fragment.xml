@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
+
         <variable
             name="place"
             type="com.chandigarhthecitybeautiful.model.Place" />
     </data>
-<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PlaceDetails"
-    android:background="#eeeeee"
-    >
 
-    <LinearLayout
+    <ScrollView xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.PlaceDetails"
+        android:background="#eeeeee">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="280dp"
-            tools:src="@tools:sample/backgrounds/scenic"
-            placeImage="@{place.image}"
-            />
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            >
-        <LinearLayout
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                tools:src="@tools:sample/backgrounds/scenic"
+                placeImage="@{place.image}" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -41,17 +41,17 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text='@{"Timing: "+place.timing, default="Timing"}'
-                android:drawableLeft="@drawable/ic_time_24"
                 android:drawableStart="@drawable/ic_time_24"
                 android:drawablePadding="10dp"
+                android:id="@+id/timing"
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:drawablePadding="10dp"
+                android:id="@+id/distance"
                 android:text='@{"Distance: "+place.distance, default="distance"}'
-                android:drawableLeft="@drawable/ic_directions_bus_24"
                 android:drawableStart="@drawable/ic_directions_bus_24" />
         </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -64,6 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:id="@+id/description"
                 android:text="@{place.description}"
                 />
         </androidx.cardview.widget.CardView>

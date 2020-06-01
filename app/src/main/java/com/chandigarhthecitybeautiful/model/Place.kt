@@ -5,7 +5,6 @@ import androidx.databinding.BindingAdapter
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.bumptech.glide.Glide
-import com.chandigarhthecitybeautiful.R
 
 @Entity(tableName = "places")
 data class Place(

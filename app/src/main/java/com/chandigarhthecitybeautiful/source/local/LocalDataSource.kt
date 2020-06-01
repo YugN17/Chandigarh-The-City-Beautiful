@@ -11,7 +11,7 @@ class LocalDataSource(
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) :
     ILocalDataSource {
-    override val allFacts = placeDAO.allPlaces()
+    private var allPlaces = placeDAO.allPlaces()
 
 
     /* function syncs offline DB with the received response
@@ -23,6 +23,10 @@ class LocalDataSource(
             placeDAO.insertPlace(place)
         }
         return@withContext true
+    }
+
+    override fun getPlaces(): LiveData<List<Place>> {
+        return allPlaces
     }
 
     override fun getPlace(id: Int): Place {
