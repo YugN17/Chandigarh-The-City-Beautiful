@@ -35,6 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+                    android:layout_margin="10dp"
             >
             <TextView
                 android:layout_width="match_parent"
@@ -58,12 +59,13 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_margin="10dp"
             >
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:textColor="#000000"
                 android:id="@+id/description"
                 android:text="@{place.description}"
                 />
